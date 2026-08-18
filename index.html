@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="section-left">
+            <h2>Project Status</h2>
+            <div class="score-display">
+                <span id="lines-count">0</span>
+                <p>Lines of Code</p>
+            </div>
+            <p class="cps-display"><span id="cps-count">0</span> lines / sec</p>
+            
+            <button id="click-btn" class="main-click-btn">
+                ⌨️<br><br>COMMIT CODE!
+            </button>
+        </div>
+
+        <!-- ตรงกลาง: โซนทีมงาน + Terminal วิ่ง -->
+        <div class="section-center">
+            <h2>Development Workspace</h2>
+            
+            <div class="workspace-visuals">
+                <div class="team-row">
+                    <span class="row-label">Interns:</span>
+                    <div id="intern-icons" class="icon-group"></div>
+                </div>
+                <div class="team-row">
+                    <span class="row-label">AIs:</span>
+                    <div id="gpt-icons" class="icon-group"></div>
+                </div>
+                <div class="team-row">
+                    <span class="row-label">Seniors:</span>
+                    <div id="senior-icons" class="icon-group"></div>
+                </div>
+            </div>
+
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">bash - terminal@dev-machine:~</span>
+                </div>
+                <div id="terminal-body" class="terminal-body">
+                    <p class="log-system">[SYSTEM] Initializing repository...</p>
+                    <p class="log-system">[SYSTEM] Ready to commit!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-right">
+            <h2>Upgrades & Team</h2>
+            <div class="shop-list">
+                
+                <div class="shop-item">
+                    <div>
+                        <h3>👨‍💻 Intern</h3>
+                        <p>cost: <span id="cost-intern">15</span> lines</p>
+                        <small>+1 lines/sec</small>
+                    </div>
+                    <button onclick="buyItem('intern')">Hire (<span id="count-intern">0</span>)</button>
+                </div>
+
+                <div class="shop-item">
+                    <div>
+                        <h3>🤖 Super AI</h3>
+                        <p>cost: <span id="cost-gpt">100</span> lines</p>
+                        <small>+8 lines/sec</small>
+                    </div>
+                    <button onclick="buyItem('gpt')">Hire (<span id="count-gpt">0</span>)</button>
+                </div>
+
+                <div class="shop-item">
+                    <div>
+                        <h3>🧙‍♂️ Senior Dev</h3>
+                        <p>cost: <span id="cost-senior">1100</span> lines</p>
+                        <small>+47 lines/sec</small>
+                    </div>
+                    <button onclick="buyItem('senior')">Hire (<span id="count-senior">0</span>)</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
